@@ -18,8 +18,8 @@ GitHub の ID が Organization の運用ルールに適合しているかチェ�
 | CLIENT_SECRET | GitHub OAuth の Client Secret |
 | WEBHOOK | 通知先 Webhook URL |
 
-GitHub の Client ID/Secret を得るには、 Organization の [Settings] から [OAuth Apps] を選び [New OAuth App] ボタンから必要事項を記入して登録することで得られます。
-登録の際の [Authorization callback URL] は、デプロイした URL の後ろに `/github` を加えた URL を指定します。
+GitHub の Client ID/Secret を得るには、 Organization の [Settings] から [OAuth Apps] を選び [New OAuth App] ボタンから必要事項を記入して登録します。
+登録の際の [Authorization callback URL] には、デプロイ後の URL の後ろに `/github` を加えた URL を指定します。
 
 名前の入力チェックは以下の条件を全て満たすものとしています:
 
