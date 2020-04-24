@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>GitHub ID Checker</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <h1>GitHub ID Checker</h1>
+    <div id="target">
+        for
+        <h2>{{.Org}}</h2>
+        <img src="https://github.com/{{.Org}}.png" id="large-logo" alt="[{{.Org}}]"/>
+    </div>
+    <p>
+        受付が完了しました。
+        申請が承認されたら、管理者からシステムを通じて招待メールが送られます。
+        適宜ご確認とご対応をお願いします。
+    </p>
+    <p>
+        本アプリケーションへの認可は解除して構いません。
+        解除するには<a href="https://github.com/settings/applications">こちらをクリック</a>して GitHub ID Checker を探し、 Revoke してください。
+    </p>
+    <div id="footer">
+        &copy;2020 github-id-checker
+    </div>
+</div>
+</body>
+</html>

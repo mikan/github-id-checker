@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>GitHub ID Checker</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <h1>GitHub ID Checker</h1>
+    <div id="target">
+        for
+        <h2>{{.Org}}</h2>
+        <img src="https://github.com/{{.Org}}.png" id="large-logo" alt="[{{.Org}}]"/>
+    </div>
+    <p>
+        このアプリケーションは上記 Organization に参加するための必要条件をチェックします。
+        GitHub ID の準備が出来ましたら、次のボタンで本アプリケーションを認可してください。
+        チェックをパスすると、参加申し込みを送ることができます。
+    </p>
+    <p>
+        本アプリケーションでは、申請があった際の ID 文字列のみを記録し、それ以外は一切記録致しません。
+        しかし、一時的にあなたのユーザーの登録情報を取り扱いますので、プライバシーポリシーへの同意が必要です。
+    </p>
+    <!--suppress HtmlUnknownTarget -->
+    <form action="/login" method="get">
+        <p id="policy">
+            <input type="checkbox" id="agreement" required="required"/>
+            <label for="agreement"><a href="{{.PolicyURL}}">プライバシーポリシー</a>に同意する</label>
+        </p>
+        <div id="auth-button">
+            <input type="submit" value="Log in with GitHub"/>
+        </div>
+    </form>
+    <div id="footer">
+         &copy;2020 github-id-checker
+    </div>
+</div>
+</body>
+</html>

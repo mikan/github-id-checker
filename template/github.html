@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>GitHub ID Checker</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <h1>GitHub ID Checker</h1>
+    <div id="target">for
+        <h2><img src="https://github.com/{{.Org}}.png" id="small-logo" alt="logo"/>{{.Org}}</h2>
+    </div>
+    <br/>
+    <p>
+        あなたの ID の確認結果は以下の通りです。
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>項目</th>
+            <th>内容</th>
+            <th>確認結果</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>種別</th>
+            <td>{{.User.Type}}</td>
+            <td>{{if .TypeChecked}}✅️通常アカウントです{{else}}❌️ 通常のアカウントではありません{{end}}</td>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <td>{{.User.Name}}</td>
+            <td>{{if .NameChecked}}✅️名前が設定されています{{else}}❌️ フルネームを設定してください (名字と名前の間には半角スペースを入れてください){{end}}</td>
+        </tr>
+        <tr>
+            <th>メールアドレス要件</th>
+            <td>{{.Email.Email}}</td>
+            <td>{{if .EmailChecked}}✅️要件を満たすメールアドレスです{{else}}❌️ 要件を満たすメールアドレスが紐付けられていません{{end}}</td>
+        </tr>
+        <tr>
+            <th>メールアドレス確認</th>
+            <td>{{.Email.Verified}}</td>
+            <td>{{if .Email.Verified}}✅️到達確認済のメールアドレスです{{else}}❌️ メールアドレスが未確認です{{end}}</td>
+        </tr>
+        <tr>
+            <th>二段階認証</th>
+            <td>{{.User.TwoFactorAuthentication}}</td>
+            <td>{{if .User.TwoFactorAuthentication}}✅️有効です{{else}}❌️ 有効化してください{{end}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        {{if .AllChecked}}✅️自動チェックが完了しました。{{else}}❌️ 確認できない項目があります。{{end}}
+    </p>
+    {{if .AllChecked}}
+        <p>
+            💡次の画像はあなたのオリジナル画像ですか？
+        </p>
+        <div id="avatar">
+            <img src="{{.User.AvatarURL}}"/>
+        </div>
+        <p>
+            もしデフォルトの (自動生成された) 画像であるならば、差し替えてください。 (<a href="https://github.com/settings/profile"
+                                                       target="_blank">設定ページ</a>)
+        </p>
+        <p>
+            オリジナルなアイコンを設定したことを確認したら、次のボタンで申請できます。
+        </p>
+        <div id="submit-button">
+            <!--suppress HtmlUnknownTarget -->
+            <form action="/submit" method="post">
+                <input type="hidden" name="token" value="{{.AccessToken}}"/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    {{else}}
+        <!--suppress HtmlUnknownTarget -->
+        <form action="/login" method="get">
+            <div id="auth-button">
+                <input type="submit" value="Log in with GitHub"/>
+            </div>
+        </form>
+    {{end}}
+    <div id="footer">
+        &copy;2020 github-id-checker
+    </div>
+</div>
+</body>
+</html>

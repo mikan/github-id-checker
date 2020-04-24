@@ -1,0 +1,129 @@
+body {
+    background: white;
+}
+
+#wrapper {
+    width: 60%;
+    background: whitesmoke;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 150%;
+    margin-top: 50px;
+    padding-top: 30px;
+}
+
+h2 {
+    font-size: 120%;
+    margin: 0;
+}
+
+p {
+    font-size: 90%;
+    color: gray;
+    padding: 0 20px;
+    line-height: 200%;
+}
+
+a {
+    color: gray;
+}
+
+table, th, td {
+    border: solid 1px gray;
+    border-collapse: collapse;
+    color: gray;
+}
+
+table {
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 5px;
+}
+
+#target {
+    text-align: center;
+}
+
+#target img#large-logo {
+    width: 200px;
+    height: 200px;
+}
+
+#target img#small-logo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 25px;
+}
+
+#policy {
+    text-align: center;
+}
+
+#auth-button {
+    text-align: center;
+    margin: 50px;
+}
+
+#auth-button input[type=submit] {
+    border-radius: 10px;
+    background: black url("octocat.png") no-repeat 20px center;
+    padding: 30px;
+    color: white;
+    font-size: 100%;
+    text-decoration: none;
+    text-indent: 40px;
+    cursor: pointer;
+    border: none;
+}
+
+#auth-button input[type=submit]:hover {
+    background: dimgray url("octocat.png") no-repeat 20px center;
+}
+
+#submit-button {
+    text-align: center;
+    margin: 50px;
+}
+
+#submit-button input[type=submit] {
+    border-radius: 10px;
+    background: green;
+    padding: 30px;
+    color: white;
+    font-size: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+#submit-button input[type=submit]:hover {
+    background: lightgreen;
+}
+
+#avatar {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#avatar img {
+    width: 200px;
+    height: 200px;
+}
+
+#footer {
+    text-align: center;
+    font-size: 60%;
+    color: silver;
+    margin: 20px;
+}
+
+#footer a {
+    color: silver;
+    text-decoration: none;
+}

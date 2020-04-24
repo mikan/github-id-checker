@@ -1,0 +1,50 @@
+{
+  "name": "GitHub ID Checker",
+  "description": "Checks organization requirements for the onboarding GitHub users",
+  "repository": "https://github.com/mikan/github-id-checker",
+  "logo": "https://github.com/mikan.png",
+  "keywords": [
+    "golang",
+    "github"
+  ],
+  "env": {
+    "ORG": {
+      "description": "Name of GitHub organization to join"
+    },
+    "KEYWORD": {
+      "description": "Required mail address suffix"
+    },
+    "POLICY_URL": {
+      "description": "Privacy policy URL"
+    },
+    "CLIENT_ID": {
+      "description": "GitHub OAuth Client ID"
+    },
+    "CLIENT_SECRET": {
+      "description": "GitHub OAuth Client Secret"
+    },
+    "SEND_FROM": {
+      "description": "FROM address of the notification email"
+    },
+    "SEND_TO": {
+      "description": "TO address of the notification email"
+    },
+    "SMTP_USER": {
+      "description": "SMTP Server authentication user"
+    },
+    "SMTP_PASSWORD": {
+      "description": "SMTP Server authentication password"
+    },
+    "SMTP_SERVER": {
+      "description": "SMTP Server address",
+      "value": "smtp.gmail.com"
+    },
+    "SMTP_PORT": {
+      "description": "SMTP Server port number",
+      "value": "587"
+    },
+    "WEBHOOK": {
+      "description": "Notification Webhook URL (Hangouts Chat recommended)"
+    }
+  }
+}
