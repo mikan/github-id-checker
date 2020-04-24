@@ -11,6 +11,9 @@ import (
 func sendMail(id, org string) {
 	from := os.Getenv("SEND_FROM")
 	to := os.Getenv("SEND_TO")
+	if len(to) == 0 {
+		return
+	}
 	user := os.Getenv("SMTP_USER")
 	password := os.Getenv("SMTP_PASSWORD")
 	server := os.Getenv("SMTP_SERVER")
