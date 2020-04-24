@@ -37,6 +37,8 @@ GitHub の Client ID/Secret を得るには、 Organization の [Settings] か�
 | SMTP_SERVER | SMTP サーバー |
 | SMTP_PORT | SMTP ポート |
 
+チャットに投稿されるメッセージの冒頭に任意の文字を入れるには、環境変数 `MSG_PREFIX` を設定します。
+Hangouts Chat で @all にメンションを送るには、`<users/all>` と記入します。
 
 ## 開発
 

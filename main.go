@@ -133,8 +133,9 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 
 	// send webhook notification
 	msg := client.Message{
-		Text: fmt.Sprintf("<users/all> GitHub ユーザー <https://github.com/%s|%s> から登録依頼が来ました。\n"+
-			"<https://github.com/orgs/%s/people|メンバー管理はこちら>", userData.Login, userData.Login, org),
+		Text: fmt.Sprintf("%s GitHub ユーザー <https://github.com/%s|%s> から登録依頼が来ました。\n"+
+			"<https://github.com/orgs/%s/people|メンバー管理はこちら>",
+			os.Getenv("MSG_PREFIX"), userData.Login, userData.Login, org),
 	}
 	err = msg.Send(webhook)
 	if err != nil {
