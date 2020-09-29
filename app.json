@@ -24,24 +24,30 @@
       "description": "GitHub OAuth Client Secret"
     },
     "SEND_FROM": {
-      "description": "FROM address of the notification email"
+      "description": "FROM address of the notification email",
+      "required": false
     },
     "SEND_TO": {
-      "description": "TO address of the notification email"
+      "description": "TO address of the notification email",
+      "required": false
     },
     "SMTP_USER": {
-      "description": "SMTP Server authentication user"
+      "description": "SMTP Server authentication user",
+      "required": false
     },
     "SMTP_PASSWORD": {
-      "description": "SMTP Server authentication password"
+      "description": "SMTP Server authentication password",
+      "required": false
     },
     "SMTP_SERVER": {
       "description": "SMTP Server address",
-      "value": "smtp.gmail.com"
+      "value": "smtp.gmail.com",
+      "required": false
     },
     "SMTP_PORT": {
       "description": "SMTP Server port number",
-      "value": "587"
+      "value": "587",
+      "required": false
     },
     "WEBHOOK": {
       "description": "Notification Webhook URL (Hangouts Chat recommended)"

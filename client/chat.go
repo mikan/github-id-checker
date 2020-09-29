@@ -3,7 +3,6 @@ package client
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -30,7 +29,7 @@ func (m *Message) Send(webhook string) error {
 		if err != nil {
 			return err
 		}
-		return errors.New(fmt.Sprintf("HTTP %d: %s", resp.StatusCode, body))
+		return fmt.Errorf("HTTP %d: %s", resp.StatusCode, body)
 	}
 	return nil
 }
