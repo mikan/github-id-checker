@@ -1,6 +1,9 @@
 github-id-checker
 =================
 
+![Go](https://github.com/mikan/github-id-checker/workflows/Go/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mikan/github-id-checker)](https://goreportcard.com/report/github.com/mikan/github-id-checker)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mikan/github-id-checker)
 
 GitHub の ID が Organization の運用ルールに適合しているかチェックし、適合している場合は登録申請を行えるようにするアプリケーションです。

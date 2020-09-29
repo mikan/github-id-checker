@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Client will implements GitHub client.
 type Client struct {
 	httpClient *http.Client
 	host       string
@@ -27,6 +28,7 @@ type EmailParam struct {
 	Verified bool   `json:"verified"`
 }
 
+// NewClient constructs a new GitHub client.
 func NewClient(httpClient *http.Client) *Client {
 	return &Client{httpClient, "https://api.github.com"}
 }
@@ -67,10 +69,12 @@ func (c *Client) Emails() ([]EmailParam, error) {
 	return emailsData, nil
 }
 
+// ValidateType checks type is a user.
 func (u *UserParam) ValidateType() bool {
 	return u.Type == "User"
 }
 
+// ValidateName checks name has two or more words separated by space.
 func (u *UserParam) ValidateName() bool {
 	trim := strings.Trim(u.Name, " ")
 	if len(trim) < 3 {
@@ -82,6 +86,7 @@ func (u *UserParam) ValidateName() bool {
 	return true
 }
 
+// ValidateEmail checks email has a specified keyword.
 func (e *EmailParam) ValidateEmail(keyword string) bool {
 	return strings.HasSuffix(e.Email, keyword)
 }
