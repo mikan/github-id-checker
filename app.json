@@ -2,6 +2,7 @@
   "name": "GitHub ID Checker",
   "description": "Checks organization requirements for the onboarding GitHub users",
   "repository": "https://github.com/mikan/github-id-checker",
+  "website": "https://github.com/mikan/github-id-checker",
   "logo": "https://github.com/mikan.png",
   "keywords": [
     "golang",
