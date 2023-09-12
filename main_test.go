@@ -7,7 +7,7 @@ import (
 )
 
 func TestFindValidEmail(t *testing.T) {
-	emails := []client.EmailParam{{"test1@test.com", false}, {"test2@abc.com", true}}
+	emails := []client.EmailParam{{Email: "test1@test.com", Verified: false}, {Email: "test2@abc.com", Verified: true}}
 	valid := findValidEmail(emails, "abc.com")
 	if valid.Email != "test2@abc.com" {
 		t.Fatalf("Email: expected %s, actual %s", "test2@abc.com", valid.Email)
