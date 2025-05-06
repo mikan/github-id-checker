@@ -4,4 +4,4 @@ module github.com/mikan/github-id-checker
 
 go 1.24.0
 
-require golang.org/x/oauth2 v0.29.0
+require golang.org/x/oauth2 v0.30.0
